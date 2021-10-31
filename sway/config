@@ -172,7 +172,7 @@ gaps inner 5
 gaps outer 5
 
 # Disable titlebars
-default_border pixel 2
+default_border pixel 4
 
 # Color definition
 client.focused "8c644c" "8c644c" "8c644c"
