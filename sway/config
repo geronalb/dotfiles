@@ -11,14 +11,14 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $menu wofi -S drun
-set $browser firefox
+set $menu wofi -W 30% -L 10 
+set $browser firefox-esr
 
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
 output eDP-1 resolution --custom 1920x1080
-output * bg /home/geronalb/Pictures/Wallpapers/red_waterfall.jpg fill
+output * bg /home/geronalb/wallpapers/library_brown.jpg fill
 
 ### Idle configuration
 exec swayidle -w \
@@ -139,7 +139,7 @@ exec swayidle -w \
     bindsym $mod+Shift+minus move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad widows, this command cycles through them.
+    # Ifthere are multiple scratchpad widows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 
 # Resizing containers:
@@ -162,22 +162,21 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Status Bar:
-bar {
-    swaybar_command waybar
-}
+# Status Bar
+# My setups usually do not involve bars, so make of this section what you will.
+# I personally believe swaybar does the job just fine, but waybar is
+# a fantastic choice too.
 
 # Gaps
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 
 # Disable titlebars
 default_border pixel 2
 
 # Color definition
-client.focused "C73F39" "C73F39" "A4211E"
-client.unfocused "131A25" "131A25" "131A25"
-client.urgent "346086" "346086" "346086"
+client.focused "8c644c" "8c644c" "8c644c"
+client.unfocused "605655" "605655" "605655"
+client.urgent "746c48" "746c48" "746c48"
 
-include /etc/sway/config.d/*
-
+include /etc/sway/config.d/* 

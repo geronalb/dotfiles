@@ -115,7 +115,7 @@ fi
 ### My stuff
 
 # Restore Wal
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # Aliassing
 alias e='nvim'
@@ -132,7 +132,7 @@ alias cmatrix='cmatrix -ba -C magenta'
 export PATH="${PATH}:${HOME}/.local/bin/"
 
 # Prompt customization
-PS1=" \e[0;36mλ\e[m \e[0;33m\w\e[m "
+PS1=" \e[0;34mλ\e[m \e[0;35m\w\e[m \e[0;35m[\A]:\e[m "
 
 # Fetch on shell startup
 pfetch
