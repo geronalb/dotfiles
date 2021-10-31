@@ -18,7 +18,7 @@ include /etc/sway/config-vars.d/*
 
 ### Output configuration
 output eDP-1 resolution --custom 1920x1080
-output * bg /home/geronalb/wallpapers/library_brown.jpg fill
+output * bg $WALL_DIR/library_brown.jpg fill
 
 ### Idle configuration
 exec swayidle -w \
@@ -172,7 +172,7 @@ gaps inner 5
 gaps outer 5
 
 # Disable titlebars
-default_border pixel 2
+default_border pixel 4
 
 # Color definition
 client.focused "8c644c" "8c644c" "8c644c"
