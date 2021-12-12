@@ -12,22 +12,18 @@ set $up k
 set $right l
 set $term kitty
 set $menu wofi -W 30% -L 10 
-set $browser firefox-esr
+set $browser firefox
 
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
-output eDP-1 resolution --custom 1920x1080
+output eDP-1 pos 0 0 resolution --custom 1920x1080
+output HDMI-A-2 pos 1920 0 resolution 1920x1080@60.000000Hz
 output * bg $WALL_DIR/library_brown.jpg fill
 
-### Idle configuration
-exec swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
-	timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-	before-sleep 'swaylock -f -c 000000'
-
 ### Input configuration
-# Nothing for now
+# Lock H950 to external monitor
+input 9580:109:HID_256c:006d map_to_output HDMI-A-2
 
 ### Key bindings
 
@@ -35,7 +31,19 @@ exec swayidle -w \
     bindsym $mod+Return exec $term
 
     # Take a screenshot
-    bindsym $mod+Shift+s exec grim
+    bindsym $mod+Shift+s exec grim -g "$(slurp)"
+
+    # Open Libresprite
+    bindsym $mod+Control+Shift+d exec /home/geronalb/downloads/LibreSprite-4fc8d53-x86_64.AppImage
+
+    # Open Discord
+    bindsym $mod+Shift+c exec /opt/Discord/Discord
+
+    # Open Krita
+    bindsym $mod+Shift+d exec /home/geronalb/downloads/krita-5.appimage
+
+    # Open Purefef
+    bindsym $mod+Control+Shift+r exec /home/geronalb/downloads/pureref.appimage
 
     # Start browser
     bindsym $mod+Shift+w exec $browser
